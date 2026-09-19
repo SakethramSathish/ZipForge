@@ -1,0 +1,81 @@
+# ==============================================================================
+# ZipForge — .gitignore
+# ==============================================================================
+
+# --- Python Bytecode & Cache ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# --- Virtual Environments ---
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# --- Streamlit ---
+# Keep .streamlit/config.toml (theme/server settings), ignore sensitive secrets
+.streamlit/secrets.toml
+
+# --- Testing & Code Quality ---
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+
+# --- Distribution & Build Artifacts ---
+build/
+dist/
+*.egg-info/
+*.egg
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# --- Temporary Files, Logs & Dumps ---
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+*.patch
+
+# --- Operating System Files ---
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- IDEs & Code Editors ---
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# --- Automated Testing / Playwright Artifacts ---
+playwright-artifacts-*/
+test-results/

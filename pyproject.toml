@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "zipforge"
+version = "2.0.0"
+description = "ZipForge — Adaptive Multi-Engine File Compressor & Image Optimizer"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit>=1.37",
+    "Pillow>=10.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3",
+    "hypothesis>=6.112",
+    "psutil>=6.0",
+    "mypy>=1.11",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
