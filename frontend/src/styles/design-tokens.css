@@ -1,0 +1,91 @@
+/* ==============================================================================
+   ZipForge Design System — Design Tokens (Premium Neo-Brutalism)
+   ============================================================================== */
+
+:root {
+  /* --- Typography --- */
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* --- Light Theme Palette (Default) --- */
+  --bg-page: #F6F4EE;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F0EDE4;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFFDF8;
+
+  --text-main: #121316;
+  --text-muted: #565D6D;
+  --text-inverted: #FFFFFF;
+
+  --border-color: #121316;
+  --border-width: 2.5px;
+  --border-width-thick: 3.5px;
+
+  --shadow-color: #121316;
+  --shadow-sm: 2px 2px 0px var(--shadow-color);
+  --shadow-md: 4px 4px 0px var(--shadow-color);
+  --shadow-lg: 6px 6px 0px var(--shadow-color);
+  --shadow-xl: 9px 9px 0px var(--shadow-color);
+  --shadow-pressed: 1px 1px 0px var(--shadow-color);
+
+  /* Accents */
+  --accent-yellow: #FFE600;
+  --accent-coral: #FF5A36;
+  --accent-mint: #00E599;
+  --accent-cyan: #00D2FF;
+  --accent-purple: #C252E1;
+  --accent-blue: #3E7BFA;
+  --accent-red: #FF3B30;
+
+  /* Radii (Restrained & Purposeful) */
+  --radius-none: 0px;
+  --radius-xs: 3px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  /* Transitions */
+  --transition-fast: 0.12s cubic-bezier(0.2, 0, 0, 1);
+  --transition-normal: 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* --- Dark Theme Palette --- */
+[data-theme="dark"] {
+  --bg-page: #0C0E12;
+  --bg-surface: #151820;
+  --bg-surface-subtle: #1C212D;
+  --bg-card: #151820;
+  --bg-card-hover: #1D212B;
+
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-inverted: #121316;
+
+  --border-color: #E2E8F0;
+  --shadow-color: #000000;
+  --shadow-sm: 2px 2px 0px var(--shadow-color);
+  --shadow-md: 4px 4px 0px var(--shadow-color);
+  --shadow-lg: 6px 6px 0px var(--shadow-color);
+  --shadow-xl: 9px 9px 0px var(--shadow-color);
+  --shadow-pressed: 1px 1px 0px var(--shadow-color);
+
+  /* High-contrast vivid accents for dark canvas */
+  --accent-yellow: #FFDE2A;
+  --accent-coral: #FF6644;
+  --accent-mint: #00F09F;
+  --accent-cyan: #00E1FF;
+  --accent-purple: #D466FF;
+  --accent-blue: #4D8BFF;
+  --accent-red: #FF4757;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

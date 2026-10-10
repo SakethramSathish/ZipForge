@@ -1,0 +1,515 @@
+/* ==============================================================================
+   ZipForge Design System — Core Neo-Brutalist Styles & Components
+   ============================================================================== */
+
+@import './design-tokens.css';
+
+/* --- Base Reset & Typography --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+/* --- Container --- */
+.nb-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem 1.25rem;
+}
+
+/* --- Neo-Brutalist Cards --- */
+.nb-card {
+  background-color: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 1.5rem;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.nb-card-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.nb-card-header {
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding: 0.85rem 1.25rem;
+  margin: -1.5rem -1.5rem 1.25rem -1.5rem;
+  background-color: var(--bg-surface-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top-left-radius: calc(var(--radius-sm) - 2px);
+  border-top-right-radius: calc(var(--radius-sm) - 2px);
+}
+
+.nb-card-accent-yellow {
+  border-top: 6px solid var(--accent-yellow);
+}
+.nb-card-accent-coral {
+  border-top: 6px solid var(--accent-coral);
+}
+.nb-card-accent-mint {
+  border-top: 6px solid var(--accent-mint);
+}
+.nb-card-accent-cyan {
+  border-top: 6px solid var(--accent-cyan);
+}
+
+/* --- Neo-Brutalist Buttons --- */
+.nb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding: 0.7rem 1.4rem;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.nb-btn:hover:not(:disabled) {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.nb-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-pressed);
+}
+
+.nb-btn:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+.nb-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+/* Button Variants */
+.nb-btn-primary {
+  background-color: var(--accent-yellow);
+  color: #121316;
+}
+.nb-btn-primary:hover:not(:disabled) {
+  background-color: #FFF033;
+}
+
+.nb-btn-coral {
+  background-color: var(--accent-coral);
+  color: #FFFFFF;
+}
+.nb-btn-coral:hover:not(:disabled) {
+  background-color: #FF704D;
+}
+
+.nb-btn-mint {
+  background-color: var(--accent-mint);
+  color: #121316;
+}
+.nb-btn-mint:hover:not(:disabled) {
+  background-color: #33FFB5;
+}
+
+.nb-btn-cyan {
+  background-color: var(--accent-cyan);
+  color: #121316;
+}
+
+.nb-btn-danger {
+  background-color: var(--accent-red);
+  color: #FFFFFF;
+}
+
+.nb-btn-secondary {
+  background-color: var(--bg-surface-subtle);
+  color: var(--text-main);
+}
+
+.nb-btn-sm {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.82rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.nb-btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: 1.15rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.nb-btn-icon {
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Badges & Tags --- */
+.nb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-xs);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+}
+
+.nb-badge-yellow { background-color: var(--accent-yellow); color: #121316; }
+.nb-badge-coral  { background-color: var(--accent-coral);  color: #FFFFFF; }
+.nb-badge-mint   { background-color: var(--accent-mint);   color: #121316; }
+.nb-badge-cyan   { background-color: var(--accent-cyan);   color: #121316; }
+.nb-badge-purple { background-color: var(--accent-purple); color: #FFFFFF; }
+.nb-badge-gray   { background-color: var(--bg-surface-subtle); color: var(--text-main); }
+.nb-badge-red    { background-color: var(--accent-red); color: #FFFFFF; }
+
+.nb-badge-pill {
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.85rem;
+}
+
+/* --- Form Inputs --- */
+.nb-input, .nb-select, .nb-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.7rem 1rem;
+  background-color: var(--bg-surface);
+  color: var(--text-main);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  outline: none;
+  transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+}
+
+.nb-input:focus, .nb-select:focus, .nb-textarea:focus {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-color);
+}
+
+.nb-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+  color: var(--text-main);
+}
+
+/* --- Form Checkbox --- */
+.nb-checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  font-weight: 600;
+  user-select: none;
+}
+
+.nb-checkbox {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.nb-checkbox:checked {
+  background-color: var(--accent-yellow);
+}
+
+.nb-checkbox:checked::before {
+  content: "✔";
+  font-size: 14px;
+  font-weight: 900;
+  color: #121316;
+}
+
+/* --- Metric Cards --- */
+.nb-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+.nb-metric-card {
+  background-color: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  padding: 1.25rem;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.nb-metric-val {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
+  display: block;
+}
+
+.nb-metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* --- Progress Bar --- */
+.nb-progress-container {
+  margin: 1rem 0;
+}
+
+.nb-progress-track {
+  width: 100%;
+  height: 22px;
+  background-color: var(--bg-surface-subtle);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  position: relative;
+}
+
+.nb-progress-fill {
+  height: 100%;
+  background-color: var(--accent-yellow);
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(0, 0, 0, 0.12) 10px,
+    rgba(0, 0, 0, 0.12) 20px
+  );
+  transition: width 0.25s ease-out;
+}
+
+/* --- Styled Tables --- */
+.nb-table-wrapper {
+  overflow-x: auto;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  margin: 1.25rem 0;
+  background-color: var(--bg-surface);
+}
+
+.nb-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.nb-table th {
+  background-color: var(--bg-surface-subtle);
+  border-bottom: var(--border-width) solid var(--border-color);
+  padding: 0.85rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-main);
+}
+
+.nb-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1.5px solid var(--border-color);
+  color: var(--text-main);
+  vertical-align: middle;
+}
+
+.nb-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nb-table tr:hover td {
+  background-color: var(--bg-card-hover);
+}
+
+/* --- Level Select Cards --- */
+.nb-level-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.nb-level-card {
+  background-color: var(--bg-card);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  position: relative;
+  user-select: none;
+}
+
+.nb-level-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.nb-level-card.selected {
+  background-color: var(--bg-card-hover);
+  border-width: var(--border-width-thick);
+  box-shadow: var(--shadow-lg);
+  transform: translate(-3px, -3px);
+}
+
+.nb-level-card.selected::after {
+  content: "✔";
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background-color: var(--accent-yellow);
+  color: #121316;
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-xs);
+  display: grid;
+  place-content: center;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+/* Decorative stripes */
+.nb-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--accent-yellow),
+    var(--accent-yellow) 12px,
+    #121316 12px,
+    #121316 24px
+  );
+  height: 10px;
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-xs);
+  margin: 1.5rem 0;
+}
+
+/* --- Toast Notifications --- */
+.nb-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 420px;
+}
+
+.nb-toast {
+  background-color: var(--bg-surface);
+  border: var(--border-width) solid var(--border-color);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  animation: slideIn 0.2s cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 860px) {
+  .nb-level-grid {
+    grid-template-columns: 1fr;
+  }
+  .nb-metric-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nb-container {
+    padding: 1rem 0.85rem 3rem 0.85rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .nb-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
